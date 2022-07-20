@@ -14,8 +14,11 @@ sortStudentsByLastName().
 1) Объявите интерфейс
 
 public interface CSVConverter{
+
 public String toCSVString();
+
 public Student fromCSVString (String str);
+
 }
 
 Класс Студент должен реализовывать этот интерфейс. Логика реализации следующая — на
