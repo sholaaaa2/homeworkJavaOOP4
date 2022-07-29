@@ -3,6 +3,7 @@ package level1;
 import java.util.Arrays;
 import java.util.Comparator;
 
+
 public class Group {
 	private Student[] groupOfStudent = new Student[10];
 
@@ -29,13 +30,21 @@ public class Group {
 
 	}
 
-	public String findStudent(String surname) {
+	public Student findStudent(String surname) {
 		for (int i = 0; i < this.groupOfStudent.length; i++) {
-			if (this.groupOfStudent[i].getSurname() != null && this.groupOfStudent[i].getSurname().equals(surname)) {
-				return "Student on index " + i;
+			if (this.groupOfStudent[i] != null && this.groupOfStudent[i].getSurname() != null && this.groupOfStudent[i].getSurname().equals(surname)) {
+				return this.groupOfStudent[i];
 			}
 		}
-		return "Student not found";
+		return null;
+	}
+	
+	public void deleteStudent(String surname) {
+		for (int i = 0; i < this.groupOfStudent.length; i++) {
+			if (this.groupOfStudent[i] != null && this.groupOfStudent[i].getSurname() != null && this.groupOfStudent[i].getSurname().equals(surname)) {
+				this.groupOfStudent[i] = null;
+			}
+		}
 	}
 
 	@Override
